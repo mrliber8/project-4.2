@@ -1,14 +1,18 @@
 @echo off
-:: This is a comment
+REM Ga naar de c schijf
 cd c:\
-::This command initializes the new local repository as a clone of the 'upstream' (i.e. the remote server based) moodle.git repository. The upstream repository is called 'origin' by default. It creates a new directory named moodle, where it downloads all the files. This operation can take a while as it is actually getting the entire history of all Moodle versions
+
+REM Clone Moodle
 git clone git://git.moodle.org/moodle.git
+
+REM Ga naar de moodle directory
 cd moodle
-::This command lists all available branches.
-git branch -a
-::Create a new local branch called MOODLE_400_STABLE and set it to track the remote branch MOODLE_400_STABLE from the upstream repository.
+
+REM Maak een branch genaamd MOODLE_400_STABLE wat de laatste stable moodle versie is
 git branch --track MOODLE_400_STABLE origin/MOODLE_400_STABLE
-::This command actually switches to the newly created local branch.
+
+REM Switch naar de nieuwe branch
 git checkout MOODLE_400_STABLE 
-:: The PAUSE Command keeps the windows open, is useful for testing
-PAUSE
+
+REM Pauze houd de window open maar staat er alleen in voor testen.
+REM PAUSE
