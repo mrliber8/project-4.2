@@ -5,11 +5,11 @@ mkdir C:\php
 REM Verander de working directory naar die folder
 cd C:\php
 
-REM Download de laatste versie van php
-curl https://windows.php.net/downloads/releases/php-8.1.13-nts-Win32-vs16-x64.zip --output ./php-8.1.13.zip --ssl-no-revoke
+REM Download de laatste 7.3 php versie. Php 8 is niet supported, en php 7.4 is niet "officieel" supported
+curl https://windows.php.net/downloads/releases/archives/php-7.3.7-nts-Win32-VC15-x64.zip --output ./php-7.3.7.zip --ssl-no-revoke
 
 REM Pak de zipfile uit
-tar -xf php-8.1.13.zip
+tar -xf php-7.3.7.zip
 
 REM Stel de path voor PHP in
 set phptpath=C:\php
@@ -29,3 +29,6 @@ REM Configure FastCGI Variables
 %windir%\system32\inetsrv\appcmd set config -section:system.webServer/fastCgi /[fullPath='%phppath%\php-cgi.exe'].instanceMaxRequests:10000
 %windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='%phppath%\php-cgi.exe'].environmentVariables.[name='PHP_FCGI_MAX_REQUESTS',value='10000']"
 %windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='%phppath%\php-cgi.exe'].environmentVariables.[name='PHPRC',value='%phppath%\php.ini']"
+
+REM Pauze houd de window open maar staat er alleen in voor testen.
+REM PAUSE
