@@ -46,21 +46,28 @@ Te veel :(
 
 ### Algemene To Do Servers
 
-* Exchange
-* DFS
-* AAA + Windows AD + NPS
-* Syslog
-* Squid Proxy
+* Active Directory Certificate services
+* Active Directory Domain Services
 * AVG Anti-Virus
+* DFS
+* DHCP Server
+* DNS Server
+* Network Policy and Access Services (NPS Server)
+* Exchange
+* Squid Proxy
+* Syslog
+* 
+* Group Policy Management?
+* SMTP?
 
 ### Algemene To Do Client Software
 
-* Auto Enroll in AD
-* Outlook 2013/2016
-* Office 2010/2013/2016
-* MS Edge
-* AVG Anti-Virus
 * 7-Zip
+* AVG Anti-Virus
+* Auto Enroll in AD
+* MS Edge
+* Office 2010/2013/2016
+* Outlook 2013/2016
 
 
 
