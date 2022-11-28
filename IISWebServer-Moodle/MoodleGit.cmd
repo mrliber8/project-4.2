@@ -1,6 +1,6 @@
 @echo off
 REM Ga naar de c schijf
-cd c:\
+cd C:\inetpub\wwwroot
 
 REM Clone Moodle
 git clone git://git.moodle.org/moodle.git
@@ -15,4 +15,4 @@ REM Switch naar de nieuwe branch
 git checkout MOODLE_400_STABLE 
 
 REM Pauze houd de window open maar staat er alleen in voor testen.
-REM PAUSE
+PAUSE

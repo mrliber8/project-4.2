@@ -30,5 +30,7 @@ REM Configure FastCGI Variables
 %windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='%phppath%\php-cgi.exe'].environmentVariables.[name='PHP_FCGI_MAX_REQUESTS',value='10000']"
 %windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='%phppath%\php-cgi.exe'].environmentVariables.[name='PHPRC',value='%phppath%\php.ini']"
 
+rename php.ini-production php.ini
+
 REM Pauze houd de window open maar staat er alleen in voor testen.
-REM PAUSE
+PAUSE
