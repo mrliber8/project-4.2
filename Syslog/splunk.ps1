@@ -60,3 +60,5 @@ wget -O splunk-9.0.2-17e00c557dc1-x64-release.msi "https://download.splunk.com/p
 #Install Splunk
 # Flags: https://docs.splunk.com/Documentation/Splunk/9.0.2/Installation/InstallonWindowsviathecommandline#Install_Splunk_Enterprise_from_the_command_line
 msiexec.exe /i splunk-9.0.2-17e00c557dc1-x64-release.msi 
+AGREETOLICENSE=Yes 
+LOGON_USERNAME="<domain\username>" 
