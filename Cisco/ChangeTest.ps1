@@ -30,7 +30,7 @@ Function Invoke-SSH
 }
 
 #Set the Path for Plink
-$plinkAndPath = "C:\users\patrick ten brinke\downloads\plink.exe"
+$plinkAndPath = plink.exe
 #Prompt for username
 $username = Read-Host -Prompt "Input username"
 #Prompt for Password
@@ -41,5 +41,5 @@ $iprange = Get-Content Cisco/iprange.txt
 $Commands = Get-Content Cisco/command.txt
 #Loop through the IPRanges and make all the changes
 ForEach ($hostname in $iprange){
-    Invoke-SSH -username $username -hostname $hostname -password $password -plinkAndPath $plinkAndPath -commandArray $Commands -connectOnceToAcceptHostKey $true > C:\MyScripts\output.txt
+    Invoke-SSH -username $username -hostname $hostname -password $password -plinkAndPath $plinkAndPath -commandArray $Commands -connectOnceToAcceptHostKey $true > output.txt
 }
