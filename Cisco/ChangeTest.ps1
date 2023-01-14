@@ -29,13 +29,17 @@ Function Invoke-SSH
     Write-Output $msg
 }
 
+#Set the Path for Plink
 $plinkAndPath = "C:\users\patrick ten brinke\downloads\plink.exe"
+#Prompt for username
 $username = Read-Host -Prompt "Input username"
+#Prompt for Password
 $password = Read-Host -Prompt "Input password"
-# Get the ip Ranges
-$iprange = Get-Content "C:\users\patrick ten brinke\downloads\iprange.txt"
-# Commands to execute:
-$Commands = Get-Content "C:\users\patrick ten brinke\downloads\command.txt"
+#Get the ip Ranges
+$iprange = Get-Content Cisco/iprange.txt
+#Commands to execute:
+$Commands = Get-Content Cisco/command.txt
+#Loop through the IPRanges and make all the changes
 ForEach ($hostname in $iprange){
     Invoke-SSH -username $username -hostname $hostname -password $password -plinkAndPath $plinkAndPath -commandArray $Commands -connectOnceToAcceptHostKey $true > C:\MyScripts\output.txt
 }

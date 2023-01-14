@@ -1,0 +1,6 @@
+conf t
+banner motd #Unauthorized access to this device is prohibited!#
+exit
+copy running-config startup-config
+
+exit
