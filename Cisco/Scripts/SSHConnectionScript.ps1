@@ -1,3 +1,12 @@
+<#
+    Author: Patrick ten Brinke
+    Description: Powershell script to automate Cisco device maintenance using the Posh-SSH module.
+    Required dependencie: Posh-SSH module.
+    Required extra file: A iprange.txt file with IP ranges or hostnames of the Cisco Devices
+    Required extra file: A commands.txt file with commands to send to the Cisco Devices
+#>
+
+#Install-Module -Name Posh-SSH
 
 function InitSSH {
     param ($Ipaddress, $secusrname, $secpasswd)
