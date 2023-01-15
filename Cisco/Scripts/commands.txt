@@ -1,5 +1,3 @@
-en
-hdwn2
 conf t
 banner motd #Unauthorized access to this device is prohibited!#
 exit
