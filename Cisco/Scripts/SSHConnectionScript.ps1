@@ -44,33 +44,20 @@ function InitSSH {
 
     #Close the SSH Session
     Remove-SSHSession -Index 0
-
-    <# Test Statements
-    Start-Sleep -Milliseconds 150
-    $stream.WriteLine("conf t")
-    Start-Sleep -sec 1
-    $stream.Read()
-    Start-Sleep -Milliseconds 50
-    $stream.WriteLine("do show run")
-    Start-Sleep -Milliseconds 50
-    $stream.WriteLine("exit")
-    Start-Sleep -sec 1
-    $stream.Read() 
-    #>
-    
-    #Close the SSH Session
-    Remove-SSHSession -Index 0
 }
 
 #Ask for username and password
-$secpasswd = Read-Host -AsSecureString -Prompt "Enter Password"
-$secusrname = Read-Host -AsSecureString -Prompt "Enter Username"
+$secpasswdprompt = Read-Host -Prompt "Enter Password"
+$secusrname = Read-Host -Prompt "Enter Username"
+
+#Convert the password to secure string
+$secpasswd = ConvertTo-SecureString $secpasswdprompt -AsPlainText -Force
 
 #Get the ip addresses to later loop through, so we can automate multiple devices
 $iprange = Get-Content "./iprange.txt"
 
 #For every address in the iprange.txt file, execute the SSH session
 ForEach ($Ipaddress in $iprange){
-    InitSSH -Ipaddress $Ipaddress -secpasswd $secpasswd -secusrname $secusrname
+    InitSSH -Ipaddress $Ipaddress -secusrname $secusrname -secpasswd $secpasswd
 }
 
