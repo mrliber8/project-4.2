@@ -61,3 +61,5 @@ ForEach ($Ipaddress in $iprange){
     InitSSH -Ipaddress $Ipaddress -secusrname $secusrname -secpasswd $secpasswd
 }
 
+#Keep the window open to see the commands being executed as well as their output
+Read-Host -Prompt "Press Enter to exit"
